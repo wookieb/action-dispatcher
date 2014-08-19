@@ -1,5 +1,5 @@
 {
-    "name": "ActionDispatcher",
+    "name": "action-dispatcher",
     "version": "0.1.0",
     "description": "UI Action dispatcher to separate View from Controller and make the application much more extensible",
     "repository": {
