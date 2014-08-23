@@ -14,6 +14,9 @@ Allow any controller, module, plugin to register a listener on their own.
 Dispatcher will call the listeners in the order defined by priority.
 If the listener returns a promise then further execution will be paused until the promise will be fulfilled.
 
+Treat the action as a function to execute upon particular UI action but instead of defining the body of the function
+allow anyone to define own steps to perform.
+
 Basically action dispatcher is similar to regular event dispatcher with major differences:
 * supports listeners priorities
 * does not ignore promises returned by listeners
