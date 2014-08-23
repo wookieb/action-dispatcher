@@ -127,20 +127,16 @@ action.dispatch()
 
 ### API
 
-**addListener(listener [,context = undefined [, priority = 20]])**
+#### addListener(listener [,context = undefined [, priority = 20]])
+* *listener* - function to call
+* *context* - context of listener function
+* *priority* - listener priority, lower number = higher precedence
 
-*listener* - function to call
-
-*context* - context of listener function
-
-*priority* - listener priority, lower number = higher precedence
-
-
-**removeListener(listener [,context = undefined [, priority = 20]])**
+#### removeListener(listener [,context = undefined [, priority = 20]])
 
 Remember to provide exactly same arguments as for listener registration.
 
-**dispatch(args...)**
+#### dispatch(args...)
 Dispatches the action with given arguments
 
 ## Why i should use it?
