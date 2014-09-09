@@ -7,6 +7,9 @@ Proxy between controllers and view for extensible apps.
 npm install --save action-dispatcher
 ```
 
+## Browser
+Available in [build](tree/master/build) directory.
+
 ## How it works?
 The idea is really simple: "Do not bind controllers and views".
 Allow any controller, module, plugin to register a listener on their own.
@@ -80,7 +83,7 @@ You can use them with the following methods:
 * addHandler
 * addListenerAfterHandlers
 
-It's a good practice to group the listeners into predefined priorities for semantic reasons.
+For semantic reasons it's better to group listeners into predefined priorities.
 
 ```javascript
 
@@ -127,20 +130,26 @@ action.dispatch()
 
 ### API
 
-#### addListener(listener [,context = undefined [, priority = 20]])
+#### addListener(listener [,context=undefined [, priority=20]])
 * *listener* - function to call
 * *context* - context of listener function
 * *priority* - listener priority, lower number = higher precedence
 
-#### removeListener(listener [,context = undefined [, priority = 20]])
+#### removeListener(listener [,context=undefined [, priority=20]])
 
 Remember to provide exactly same arguments as for listener registration.
 
 #### dispatch(args...)
 Dispatches the action with given arguments
 
-## Why i should use it?
+## Why should I use it?
 @TODO In progress
 
 ## Real use cases
 @TODO In progress
+
+#Changelog
+
+##0.1.1
+* Added "dispatchWithContext" method
+* Added browser builds

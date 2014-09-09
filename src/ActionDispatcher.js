@@ -58,12 +58,6 @@ var addListenerForPriority = function(priority) {
 
         executeListener(listeners, index+1, args, resolve, reject);
     },
-    /**
-     * Checks whether given valus is "thenable"
-     * http://promisesaplus.com/#point-7
-     *
-     * @param value
-     */
         isThenable = function(value) {
         return typeof value !== 'undefined' &&
             value !== null &&
@@ -71,11 +65,10 @@ var addListenerForPriority = function(priority) {
             typeof value.then === 'function';
     };
 
-
-var ActionDispatcher = module.exports = function() {
+var ActionDispatcher = function() {
     this._listeners = [];
+    this.dispatchWithContext = this.dispatch.bind(this);
 };
-
 
 ActionDispatcher.BEFORE_HANDLERS_PRIORITY = 5;
 ActionDispatcher.HANDLERS_PRIORITY = 10;
@@ -114,6 +107,4 @@ ActionDispatcher.prototype = {
     }
 };
 
-
-
-
+module.exports = ActionDispatcher;

@@ -241,5 +241,18 @@ describe('ActionDispatcher', function() {
             dispatcher.dispatch();
             assert.equal(1, calls);
         });
+
+        it('"dispatchWithMethod" should be always called with dispatcher context', function() {
+            var calls = 0;
+            dispatcher.addListener(function() {
+                calls++;
+                assert.strictEqual(exampleContext, this);
+            });
+
+            assert.doesNotThrow(function() {
+                dispatcher.dispatchWithContext.call({});
+            });
+            assert.equal(1, calls);
+        });
     });
 });
