@@ -9,6 +9,7 @@ npm install --save action-dispatcher
 
 ## Browser
 Available in [build](tree/master/build) directory.
+NOTE. Using [browserify](http://browserify.org/) or [modules-webmake](https://github.com/medikoo/modules-webmake) is preferred way to consume CommonJS modules like this one.
 
 ## How it works?
 The idea is really simple: "Do not bind controllers and views".
@@ -23,7 +24,7 @@ allow anyone to define own steps to perform.
 Basically action dispatcher is similar to regular event dispatcher with major differences:
 * supports listeners priorities
 * does not ignore promises returned by listeners
-* ActionsDispatcher.prototype.dispatch always returns a promise
+* ActionDispatcher.prototype.dispatch always returns a promise
 * define the context of listener (to avoid creation of unnecessary functions via Function.prototype.bind)
 
 ## How to use?
@@ -141,12 +142,6 @@ Remember to provide exactly same arguments as for listener registration.
 
 #### dispatch(args...)
 Dispatches the action with given arguments
-
-## Why should I use it?
-@TODO In progress
-
-## Real use cases
-@TODO In progress
 
 #Changelog
 

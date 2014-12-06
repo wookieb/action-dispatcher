@@ -68,6 +68,7 @@ var addListenerForPriority = function(priority) {
 
 var ActionDispatcher = function() {
     this._listeners = [];
+    this.dispatchWithContext = this.dispatch.bind(this);
 };
 
 ActionDispatcher.BEFORE_HANDLERS_PRIORITY = 5;
